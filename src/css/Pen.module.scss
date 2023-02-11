@@ -1,0 +1,104 @@
+.penBody {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.editors {
+  display: flex;
+  height: 100%;
+}
+
+.top {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bottom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.outputWindow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.Header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 60px;
+  border-bottom: 1px solid #666666;
+}
+
+.logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.textSection {
+  width: 100%;
+}
+
+.penTitle {
+  font-size: 1rem;
+}
+
+.penAuthor {
+  font-size: 0.8rem;
+}
+
+.headerBtns {
+  display: flex;
+  justify-content: space-evenly;
+  button {
+    border: none;
+    margin-right: 1rem;
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+}
+
+.authBtns {
+  display: flex;
+
+  button:hover {
+    background-color: #f0f0f0;
+    color: #181818;
+  }
+}
+
+.saveBtn:hover {
+  background-color: #3fa73f;
+  color: #fff;
+}
+
+.delBtn:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
