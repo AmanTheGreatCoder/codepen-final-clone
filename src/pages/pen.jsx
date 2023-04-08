@@ -1,19 +1,27 @@
-import React from "react";
-import Editor from "../components/Editor";
-import { javascript } from "@codemirror/lang-javascript";
-import { html } from "@codemirror/lang-html";
-import { css } from "@codemirror/lang-css";
-import { useState, useLayoutEffect } from "react";
-import styles from "../css/Pen.module.scss";
-import { Link } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from 'react';
+import Editor from '../components/Editor';
+import { javascript } from '@codemirror/lang-javascript';
+import { html } from '@codemirror/lang-html';
+import { css } from '@codemirror/lang-css';
+import { useState, useLayoutEffect } from 'react';
+import styles from '../css/Pen.module.scss';
+import { Link } from 'react-router-dom';
 
 const Pen = () => {
-  const [htmlStr, setHTML] = useState("");
-  const [cssStr, setCSS] = useState("");
-  const [jsStr, setJS] = useState("");
-  const [srcDoc, setSrcDoc] = useState("");
+  const [htmlStr, setHTML] = useState('');
+  const [cssStr, setCSS] = useState('');
+  const [jsStr, setJS] = useState('');
+  const [srcDoc, setSrcDoc] = useState('');
 
   useLayoutEffect(() => {
+    setHTML(localStorage.getItem('html'));
+    setCSS(localStorage.getItem('css'));
+    setJS(localStorage.getItem('js'));
+  }, []);
+
+  useLayoutEffect(() => {
+    saveData();
     setSrcDoc(`<html>
   <body>${htmlStr}</body>
   <style>${cssStr}</style>
@@ -21,15 +29,28 @@ const Pen = () => {
   </html>`);
   }, [htmlStr, cssStr, jsStr]);
 
+  const saveData = () => {
+    if (htmlStr !== '') {
+      localStorage.setItem('html', htmlStr);
+    }
+    if (cssStr !== '') {
+      localStorage.setItem('css', cssStr);
+    }
+    if (jsStr !== '') {
+      localStorage.setItem('js', jsStr);
+    }
+    console.log('saving data');
+  };
+
   return (
     <div className={styles.penBody}>
       <div className={styles.top}>
         <div className={styles.Header}>
-          <Link to="/">
+          <Link to='/'>
             <div className={styles.logo}>
               <img
-                src="https://icon-library.com/images/codepen-icon/codepen-icon-26.jpg"
-                alt=""
+                src='https://icon-library.com/images/codepen-icon/codepen-icon-26.jpg'
+                alt=''
               />
             </div>
           </Link>
@@ -39,11 +60,26 @@ const Pen = () => {
           </div>
 
           <div className={styles.headerBtns}>
-            <button className={styles.saveBtn}>Save</button>
-            <button className={styles.delBtn}>Delete</button>
+            <button onClick={saveData} className={styles.saveBtn}>
+              Save
+            </button>
             <div className={styles.authBtns}>
-              <button className={styles.signinBtn}>Sign In</button>
-              <button className={styles.signupBtn}>Sign Up</button>
+              <button
+                onClick={() => {
+                  window.location.href = '/accounts/login';
+                }}
+                className={styles.signinBtn}
+              >
+                Log In
+              </button>
+              <button
+                onClick={() => {
+                  window.location.href = '/accounts/signup';
+                }}
+                className={styles.signupBtn}
+              >
+                Sign Up
+              </button>
             </div>
           </div>
         </div>
@@ -53,7 +89,7 @@ const Pen = () => {
             className={styles.editor}
             onChange={setHTML}
             value={htmlStr}
-            displayName="HTML"
+            displayName='HTML'
             extensions={[
               html({
                 autoCloseTags: true,
@@ -66,14 +102,14 @@ const Pen = () => {
             className={styles.editor}
             onChange={setCSS}
             value={cssStr}
-            displayName="CSS"
+            displayName='CSS'
             extensions={[css()]}
           />
           <Editor
             className={styles.editor}
             onChange={setJS}
             value={jsStr}
-            displayName="JS"
+            displayName='JS'
             extensions={[javascript({ jsx: true, typescript: true })]}
           />
         </div>
@@ -81,11 +117,7 @@ const Pen = () => {
 
       <div className={styles.bottom}>
         <div className={styles.outputWindow}>
-          <iframe
-            title="output"
-            className={styles.iframe}
-            srcDoc={srcDoc}
-          />
+          <iframe title='output' className={styles.iframe} srcDoc={srcDoc} />
         </div>
       </div>
     </div>
