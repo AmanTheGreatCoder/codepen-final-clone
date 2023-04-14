@@ -553,11 +553,11 @@
 }
 .Button-module_root-xw\+9d[data-align='start'] {
   text-align: left;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .Button-module_root-xw\+9d[data-align='end'] {
   text-align: right;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .Button-module_root-xw\+9d[data-variant='outline'] {
   background: 0 0;
@@ -753,7 +753,7 @@
   display: grid;
   gap: 0.5rem;
   flex: 1 1 auto;
-  align-self: start;
+  align-self: flex-start;
 }
 .BlockCard-module_root-Fnc\+T:not([data-size='SMALL'])
   .BlockCard-module_header-h-XZv {
@@ -763,7 +763,7 @@
 }
 .BlockCard-module_root-Fnc\+T:not([data-size='SMALL'])
   .BlockCard-module_icon-ZEdaJ {
-  align-self: start;
+  align-self: flex-start;
 }
 .BlockCard-module_root-Fnc\+T[data-size='LARGE'] {
   gap: 1rem;
@@ -1527,7 +1527,7 @@
 }
 .FieldSet-module_root-o3xrU .FieldSet-module_info-hIYFn {
   flex: 1 1 calc(60% - 1rem);
-  justify-self: start;
+  justify-self: flex-start;
 }
 .FieldSet-module_label-ZguoI {
   font-weight: 700;
@@ -2137,7 +2137,7 @@ summary .Log-module_statusMeta-CxWM\+ {
 }
 .LogGroup-module_root-GMQx7 {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 0.25rem;
   border-bottom: 1px solid hsl(var(--cp-color-10-hsl) / 50%);
   padding: 0.5rem 0;
@@ -3611,7 +3611,7 @@ input[type='search'].CollectionsFilter-module_searchInput-PePFm::placeholder {
   overflow: hidden;
   grid-column: 1;
   grid-row: 1 / span 2;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .ItemComment-module_commentAuthor-Ix\+58,
 .ItemComment-module_commentTime-J4lRX {
@@ -5279,7 +5279,7 @@ body[data-custom-playground] .Logo_root-i9NlR .Logo_small-j3ROV svg {
 .ContentGrid-module_root-NDMkl {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  align-items: start;
+  align-items: flex-start;
   justify-items: center;
   grid-gap: 3rem 3rem;
 }
@@ -8306,7 +8306,7 @@ button.BillingPlansUser_planIntervalToggleButton-eAKek:hover {
   word-break: break-word;
 }
 .EmbedModalCodeAreas-module_copyButton-nr\+34 {
-  justify-self: end;
+  justify-self: flex-end;
   position: relative;
   margin: 0 !important;
 }
@@ -8416,7 +8416,7 @@ button.BillingPlansUser_planIntervalToggleButton-eAKek:hover {
 .EmbedModal-module_defaultTabs-aW3jF {
   margin-top: 0.5rem;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-wrap: wrap;
 }
 .EmbedModal-module_defaultTabs-aW3jF .EmbedModal-module_codeTabs-5lOAJ {
