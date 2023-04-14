@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Editor from '../components/Editor';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
