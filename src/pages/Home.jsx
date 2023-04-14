@@ -17,14 +17,14 @@ const Home = () => {
             data-test-id='signup-button'
             className='Button-module_root-xw+9D LogInAndSignUpButtons_signupButton-LlBNZ'
             data-color='green'
-            href='/accounts/signup'
+            href='/signup'
           >
             Sign Up
           </a>
           <a
             data-test-id='login-button'
             className='Button-module_root-xw+9D LogInAndSignUpButtons_loginButton-pJov-'
-            href='/accounts/login'
+            href='/login'
           >
             Log In
           </a>
