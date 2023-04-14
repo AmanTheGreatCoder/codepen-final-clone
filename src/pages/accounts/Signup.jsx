@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
     axios
       .post(
-        'http://localhost:5000/register',
+        'https://radiant-bonbon-4a5924.netlify.app/.netlify/functions/api/register',
         {
           data: {
             email: username,

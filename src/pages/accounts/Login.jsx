@@ -13,7 +13,7 @@ const Login = () => {
     console.log('authorizing');
     axios
       .post(
-        'http://localhost:5000/login',
+        'https://radiant-bonbon-4a5924.netlify.app/.netlify/functions/api/login',
         {
           data: {
             email: username,
