@@ -13,21 +13,23 @@ const Home = () => {
       >
         <Sidebar />
         <div className='HeaderBar_searchAndUserMenu-1TYha'>
-          <a
-            data-test-id='signup-button'
-            className='Button-module_root-xw+9D LogInAndSignUpButtons_signupButton-LlBNZ'
-            data-color='green'
-            href='/signup'
-          >
-            Sign Up
-          </a>
-          <a
-            data-test-id='login-button'
-            className='Button-module_root-xw+9D LogInAndSignUpButtons_loginButton-pJov-'
-            href='/login'
-          >
-            Log In
-          </a>
+          <Link to='/accounts/signup'>
+            <a
+              data-test-id='signup-button'
+              className='Button-module_root-xw+9D LogInAndSignUpButtons_signupButton-LlBNZ'
+              data-color='green'
+            >
+              Sign Up
+            </a>
+          </Link>
+          <Link to='/accounts/login'>
+            <a
+              data-test-id='login-button'
+              className='Button-module_root-xw+9D LogInAndSignUpButtons_loginButton-pJov-'
+            >
+              Log In
+            </a>
+          </Link>
         </div>
         <header className='HomepageAnonHeader_root-FJ8v9'>
           <svg
